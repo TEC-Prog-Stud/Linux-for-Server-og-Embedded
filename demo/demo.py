@@ -13,7 +13,7 @@ sense = SenseHat()
 sense.set_rotation(0)
 sense.clear()
 
-sense.set_imu_config(True, False, False)
+sense.set_imu_config(True, False, False) # sense.set_imu_config(compass_enabled, gyro_enabled, acc_enabled)
 
 prev_x = 0
 prev_y = 0
@@ -22,6 +22,7 @@ led_degree_ratio = len(led_loop) / 360.0
 
 while True:
     dir = sense.get_compass()
+    print("North: %s" % dir)
     dir_inverted = 360 - dir  # So LED appears to follow North
     led_index = int(led_degree_ratio * dir_inverted)
     offset = led_loop[led_index]
