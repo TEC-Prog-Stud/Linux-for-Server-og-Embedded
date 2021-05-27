@@ -1,4 +1,6 @@
 #!/usr/bin/python
+
+## Dokumentation af import
 import sys
 from sense_hat import SenseHat
 
@@ -7,16 +9,27 @@ from sense_hat import SenseHat
 # The calibration program will produce the file RTIMULib.ini
 # Copy it into the same folder as your Python code
 
+## 
+# en matrix, foldet ud som en en-dimensionel array, af grader for kompaset
 led_loop = [4, 5, 6, 7, 15, 23, 31, 39, 47, 55, 63, 62, 61, 60, 59, 58, 57, 56, 48, 40, 32, 24, 16, 8, 0, 1, 2, 3]
 
+## snese er objektet
+# SenseHat obejektet
 sense = SenseHat()
 sense.set_rotation(0)
+
+# Slet alle LED'er
 sense.clear()
 
 sense.set_imu_config(True, False, False) # sense.set_imu_config(compass_enabled, gyro_enabled, acc_enabled)
 
+## Forrige x
+# 
 prev_x = 0
+
+## Forrige y
 prev_y = 0
+
 
 led_degree_ratio = len(led_loop) / 360.0
 
