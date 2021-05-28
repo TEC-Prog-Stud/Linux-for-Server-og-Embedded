@@ -1,0 +1,23 @@
+@startuml
+
+class MagneticCompas {
+    -angle
+    -misrepresentation
+    setMisrepresentation()
+    getAngle()
+    getCorrectedAngle()
+}
+
+class DisplayCompas {
+    currentPixelX
+    currentPixelY
+    previeusPixelX
+    previeusPixelY
+
+    {x, y} angleToPixel(angle)
+    setCurrentPixel(x, y)
+}
+
+
+
+@enduml
