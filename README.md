@@ -50,7 +50,7 @@ En hurtig måde at udvikle et program design er ved tegne det i uml, på baggrun
   * magnetisk kompas 
     * grundlæggende magnetometer
     * retning
-  * visulet kompas
+  * visuelt kompas
     * visning af retning
     * opdatering af display
 
