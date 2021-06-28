@@ -12,7 +12,7 @@ En egentlig brugertest, forventes ikke.  (Men måske...)
 
 Programmet dokumenteres med en webside, delvist genereret i doxygen. 
 På websiden skal man kunne aflæse pi'ens aktuelle vinkel til nord, hvilket sker med en service, som kører et api som anvender flask. Websiden har et javascript der requester fra api'et med et defineret interval.
-https://programminghistorian.org/en/lessons/creating-apis-with-python-and-flask#implementing-our-api
+Se https://programminghistorian.org/en/lessons/creating-apis-with-python-and-flask#implementing-our-api og https://whitefoxcreative.com/developers/ajax/using-ajax-to-reload-only-a-div/
 
 Desuden et par man sider, som også delvist genereres i doxygen.
 
