@@ -11,8 +11,8 @@ class MagneticCompas {
 class DisplayCompas {
     currentPixelX
     currentPixelY
-    previeusPixelX
-    previeusPixelY
+    -previeusPixelX
+    -previeusPixelY
 
     {x, y} angleToPixel(angle)
     setCurrentPixel(x, y)
