@@ -17,9 +17,12 @@ class TestMagneticCompasUnit(unittest.TestCase):
 
     def test_setCurrentPixel(self):
         # Arrange
+        magcomp = MagneticCompas();
         # Act
+        magcomp.setCurrentPixel(1,2)
         # Assert
-        None
+        self.assertEqual(magcomp.currentPixelX, 1)
+        self.assertEqual(magcomp.currentPixelY, 2)
 
     def test_currentpixel_at_start(self):
         # Arrange
@@ -27,16 +30,14 @@ class TestMagneticCompasUnit(unittest.TestCase):
         
         # Act
         # Assert
-        self.assertTrue(False)
+        self.assertEqual(magcomp.currentPixelX, None)
+        self.assertEqual(magcomp.currentPixelY, None)
 
-        None
+
 
         # Arrange
         # Act
         # Assert
-
-
-#class TestMagneticCompasIntegration(unittest.TestCase):
 
 
 if __name__ == '__main__':
