@@ -1,8 +1,8 @@
 import math
+#import src.magnetic_compas
+from src.magnetic_compas import *
 
-class MagneticCompas():
-
-
+class DisplayCompas():
 
     def __init__(self):
         self.currentPixelX = None
@@ -16,15 +16,9 @@ class MagneticCompas():
         self.currentPixelX = x
         self.currentPixelY = y
 
-    def radToEast(self, deg):
-        if deg > 90:
-            return 2*math.pi - (deg-90)/360 * 2*math.pi
-        else:
-            return - (deg-90)/360 * 2*math.pi
+    def angle2pixels(self, angle):
+        rad = MagneticCompas.r2d(angle)
+        x = math.ceil(math.cos(rad)*3.9) + 3
+        y = math.ceil(math.sin(rad)*3.9) + 3
+        return (x, y)
 
-    
-    def r2d(d):
-        if d > 90:
-            return 2*math.pi - (d-90)/360 * 2*math.pi
-        else:
-            return - (d-90)/360 * 2*math.pi
