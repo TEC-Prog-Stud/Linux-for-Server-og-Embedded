@@ -20,12 +20,12 @@ class TestMagneticCompasUnit(unittest.TestCase):
         magcomp = MagneticCompas();
         
         # Act
-        north = magcomp.radToEast( 0 )
-        east  = magcomp.radToEast( 90 ) 
-        south = magcomp.radToEast( 180 )
-        west  = magcomp.radToEast( 270 )
+        north = MagneticCompas.hNorth2rEast( 0 )
+        east  = MagneticCompas.hNorth2rEast( 90 ) 
+        south = MagneticCompas.hNorth2rEast( 180 )
+        west  = MagneticCompas.hNorth2rEast( 270 )
 
-        ne    = magcomp.radToEast( 45 )
+        ne    = MagneticCompas.hNorth2rEast( 45 )
 
         # Assert
         self.assertEquals(north, 0.5*math.pi, "north")
@@ -35,43 +35,6 @@ class TestMagneticCompasUnit(unittest.TestCase):
 
         self.assertEquals(ne,    .25*math.pi, "ne")
         
-
-
-    # def test_setCurrentPixel(self):
-    #     # Arrange
-    #     magcomp = MagneticCompas();
-    #     # Act
-    #     magcomp.setCurrentPixel(1,2)
-    #     # Assert
-    #     self.assertEqual(magcomp.currentPixelX, 1)
-    #     self.assertEqual(magcomp.currentPixelY, 2)
-
-    # def test_currentpixel_at_start(self):
-    #     # Arrange
-    #     magcomp = MagneticCompas();
-    #     # Act
-    #     pass
-    #     # Assert
-    #     self.assertEqual(magcomp.currentPixelX, None)
-    #     self.assertEqual(magcomp.currentPixelY, None)
-
-    # def test_prevpixel_hidden(self):
-    #     # Arrange
-    #     magcomp = MagneticCompas();
-    #     # Act
-    #     # Assert
-    #     with self.assertRaises(AttributeError) as raisedException:
-    #         print(magcomp.__previousPixelX)
-    #     with self.assertRaises(AttributeError) as raisedException:
-    #         print(magcomp.__previousPixelY)
-
-    #     #magcomp.__previousPixelX = 0
-
-    #     #with self.assertRaises(AttributeError) as raisedException:
-    #     # with self.assertRaises(BaseException) as raisedException:
-    #     #     magcomp.__previousPixelX = 42
-    #     # print('raisedException:', raisedException)
-
 
 
         # Arrange

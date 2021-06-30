@@ -16,15 +16,15 @@ class MagneticCompas():
         self.currentPixelX = x
         self.currentPixelY = y
 
-    def radToEast(self, deg):
+    def hNorth2rEast(deg):
         if deg > 90:
             return 2*math.pi - (deg-90)/360 * 2*math.pi
         else:
             return - (deg-90)/360 * 2*math.pi
 
     
-    def r2d(d):
-        if d > 90:
-            return 2*math.pi - (d-90)/360 * 2*math.pi
-        else:
-            return - (d-90)/360 * 2*math.pi
+    # def r2d(d):
+    #     if d > 90:
+    #         return 2*math.pi - (d-90)/360 * 2*math.pi
+    #     else:
+    #         return - (d-90)/360 * 2*math.pi

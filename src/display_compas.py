@@ -17,7 +17,7 @@ class DisplayCompas():
         self.currentPixelY = y
 
     def angle2pixels(self, angle):
-        rad = MagneticCompas.r2d(angle)
+        rad = MagneticCompas.hNorth2rEast(angle)
         x = math.ceil(math.cos(rad)*3.9) + 3
         y = math.ceil(math.sin(rad)*3.9) + 3
         return (x, y)
