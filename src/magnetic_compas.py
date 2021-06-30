@@ -5,26 +5,15 @@ class MagneticCompas():
 
 
     def __init__(self):
-        self.currentPixelX = None
-        self.currentPixelY = None
-        self.__previousPixelX = None
-        self.__previousPixelY = None
-
-    def setCurrentPixel(self, x, y):
-        self.previousPixelX = self.currentPixelX
-        self.previousPixelY = self.currentPixelY
-        self.currentPixelX = x
-        self.currentPixelY = y
+        pass
 
     def hNorth2rEast(deg):
+        """
+            Calculate the 360 deg bearing from north, clockwize, to radians from first axis, counterclockwize
+        """
+        ## when the compas is in the 2nd, 3rd or 4th qadrant (90-360 deg or east to north clockwice (3-o-clock to 12 o-clock))
+        ## we take substract the radians from a whole round (2*pi)
         if deg > 90:
-            return 2*math.pi - (deg-90)/360 * 2*math.pi
+            return 2*math.pi - math.radians(deg-90) 
         else:
-            return - (deg-90)/360 * 2*math.pi
-
-    
-    # def r2d(d):
-    #     if d > 90:
-    #         return 2*math.pi - (d-90)/360 * 2*math.pi
-    #     else:
-    #         return - (d-90)/360 * 2*math.pi
+            return - math.radians(deg-90)
