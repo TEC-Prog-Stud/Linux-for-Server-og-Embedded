@@ -20,7 +20,7 @@ Desuden et par man sider, som også delvist genereres i doxygen.
 
 Egentlig er det et magnetometer, men det bør pege mod nord. Især hvis der ikke er andre kraftige magneter i nærheden.
 
-// hvilken chip?
+// TODO: hvilken chip, er kompas?
 
 ## UML design
 
@@ -67,6 +67,7 @@ En hurtig måde at udvikle et program design er ved tegne det i uml, på baggrun
   * 
 
 // TODO: uml diagrammer => sequence
+
 
 <!--
 
