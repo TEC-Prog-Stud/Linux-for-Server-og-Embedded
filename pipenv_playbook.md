@@ -1,5 +1,11 @@
 # How to use `pipenv`
 
+Pipenv er en relitivt ny ting (vist fra 2008), men først rigtigt kommet i fokus i '20erne.
+
+Det virker en del som `npm` eller ligninde.
+
+En alternativ løsning er Anaconda, miniconda eller bare conda. Som jo også har navn fra en slage, lige som Python.
+
 ## Install
 
     cd <some dir where project lives>
