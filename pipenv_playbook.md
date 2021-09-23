@@ -9,3 +9,10 @@
 
     pipenv shell
 
+## Add some requirements
+
+    pipenv install sense-emu
+
+## Check `Pipfile.lock`
+
+    cat Pipfile.lock
