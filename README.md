@@ -1,5 +1,19 @@
 # Kompas med Raspberry Pi
 
+- [Kompas med Raspberry Pi](#kompas-med-raspberry-pi)
+  - [Raspberry Pi Sense-hat har et kompas](#raspberry-pi-sense-hat-har-et-kompas)
+  - [UML design](#uml-design)
+    - [Handlinger](#handlinger)
+    - [Ansvar for viden](#ansvar-for-viden)
+    - [Objekter](#objekter)
+    - [Ansvar](#ansvar)
+  - [Test first](#test-first)
+    - [Test typer](#test-typer)
+    - [Design patten](#design-patten)
+  - [Doxygen muligheder](#doxygen-muligheder)
+    - [Doxy file](#doxy-file)
+    - [HTML header](#html-header)
+
 Ideen med dette projekt er at lave et eksemplarisk projekt, til faget `Linux rettet mod Server og Embedded 16744`.
 
 Med applikationen kan man bruge en Raspberry Pi med SenseHAT, som kompas.
@@ -21,6 +35,10 @@ Desuden et par man sider, som også delvist genereres i doxygen.
 Egentlig er det et magnetometer, men det bør pege mod nord. Især hvis der ikke er andre kraftige magneter i nærheden.
 
 // TODO: hvilken chip, er kompas?
+
+HArdwaret kan tilsyneladende emuleres med dette: <https://sense-emu.readthedocs.io/en/v1.1/install.html>
+
+// TODO Check det ()Sense-emu ud!
 
 ## UML design
 
