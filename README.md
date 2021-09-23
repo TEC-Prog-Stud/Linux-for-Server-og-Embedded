@@ -66,9 +66,37 @@ En hurtig måde at udvikle et program design er ved tegne det i uml, på baggrun
   * deaktiverer pixel sidst aktiveret
   * 
 
-/// uml diagrammer => klasser, sequence
+// TODO: uml diagrammer => sequence
 
-![](doc/asset/classes.png)
+<!--
+
+@startuml
+
+class MagneticCompas {
+    -angle
+    -misrepresentation
+    setMisrepresentation()
+    getAngle()
+    getCorrectedAngle()
+}
+
+class DisplayCompas {
+    currentPixelX
+    currentPixelY
+    -previeusPixelX
+    -previeusPixelY
+
+    {x, y} angleToPixel(angle)
+    setCurrentPixel(x, y)
+}
+
+@enduml
+
+-->
+
+![README](https://www.plantuml.com/plantuml/svg/PP312eCm38RlVOeU5RPtSBYhiCCEynXga49jfOb34TzzDIBJhQVc-__cJreGG-IXSqeP1qIwWjOZMrE6hWVIizBfNC6t3hThPobY7v7GCx0DNZ0XLxz2belK8j_Mvz-o336YOMnslkpfTqkzW-aKReRazlom8xhN7wctgLBks-901zUPrKhWF5xqj6ZPvnb4oQJ8zpNAG_DiTSju1Vec_T87 "README")
+
+
 ## Test first
 
 I Eksemplet følger vi strategien "test first", hvor vi altså skriver test for en feature først, og derefter implementerer kode så testen opfyldes.
