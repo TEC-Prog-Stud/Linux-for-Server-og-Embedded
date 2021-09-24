@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# https://github.com/astro-pi/python-sense-hat/blob/master/examples/compass.py
+
 ## Dokumentation af import
 import sys
 from sense_emu import SenseHat
