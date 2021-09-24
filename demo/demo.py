@@ -4,7 +4,16 @@
 
 ## Dokumentation af import
 import sys
-from sense_emu import SenseHat
+from os import environ
+
+if 'EMU' in environ and environ['EMU']:
+    from sense_emu import SenseHat
+else:
+    from sense_hat import SenseHat
+
+## Pipenv indlæser automatisk .env ved start med `pipenv shell` og `pinenv run`.
+## Dermed kan EMU defineres i .env og dermed bestemme om vi skal importere sense_emu eller sense_hat
+
 
 # To get good results with the magnetometer you must first calibrate it using
 # the program in RTIMULib/Linux/RTIMULibCal
