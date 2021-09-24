@@ -21,6 +21,7 @@ Dog har jeg også valgt pipenv, så min instgallations komando er:
 
 Jeg burde kunne starte gui'en på emulatoren, men der mangler noget:
 
+```bash
     $ sense_emu_gui
     
     Traceback (most recent call last):
@@ -29,9 +30,11 @@ Jeg burde kunne starte gui'en på emulatoren, men der mangler noget:
     File "/home/soren/.local/share/virtualenvs/kompas-pJXt-fLC/lib/python3.8/site-packages/sense_emu/gui.py", line 42, in <module>
         import gi
     ModuleNotFoundError: No module named 'gi'
+```
 
 I manualen står der at jeg skal bruge et gui-lib-modul `python3-gi`, så det prøver jeg:
 
+```bash
     $ sudo apt install python3-gi
     [sudo] password for soren: 
     Reading package lists... Done
@@ -44,6 +47,7 @@ I manualen står der at jeg skal bruge et gui-lib-modul `python3-gi`, så det pr
     python3-importlib-metadata python3-more-itertools python3-virtualenv python3-virtualenv-clone python3-zipp
     Use 'sudo apt autoremove' to remove them.
     0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+```
 
 Ikke så godt... at den ikke installerer noget. Det giver samme, _negative_, resultat at køre `sense_emu_gui` igen.
 
@@ -76,12 +80,15 @@ Det kan være fint at kunne sætte programmerne op at i bruge sense_emu i test, 
 
 Derfor har jeg oprettet filen `.env` i projektets rod. Når `pipenv shell` køres, indlæses linierne i `.env` som ekstra environment variabler fra operativsystemet. 
 
+```bash
     $ pipenv shell
     Loading .env environment variables...
     Launching subshell in virtual environment...
+```
 
 I `demo.py` har jeg tilføjet/ændret import delen, så der nu står følgende, linje 6-12:
 
+```python
     import sys
     from os import environ
 
@@ -89,6 +96,7 @@ I `demo.py` har jeg tilføjet/ændret import delen, så der nu står følgende, 
         from sense_emu import SenseHat
     else:
         from sense_hat import SenseHat
+```
 
 På den måde importeres `sense_emu` når environment-variblen `EMU` er sat til `True`, mens `sense_hat` importeres hvis `EMU` mangler eller er sat til noget andet (f.eks. sat til `False`).
 
