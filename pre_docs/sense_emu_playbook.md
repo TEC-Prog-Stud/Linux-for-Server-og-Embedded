@@ -5,12 +5,13 @@ Se: <https://sense-emu.readthedocs.io/en/v1.1/index.html>
 - [Adventures using sense hat emulator](#adventures-using-sense-hat-emulator)
   - [Installation](#installation)
     - [Løsning?](#løsning)
-  - [første forsøg](#første-forsøg)
-  - [automatisk til og fra](#automatisk-til-og-fra)
+    - [Web udgave](#web-udgave)
+  - [Første forsøg, med `demo.py`](#første-forsøg-med-demopy)
+  - [Automatisk til og fra](#automatisk-til-og-fra)
 
 ## Installation
 
-Jeg har valgt pip-installation, for at gøre installationen mest muligt reproducerbar. Derfor skal man installere nogen support moduler manuelt :-(
+Jeg har valgt pipenv-installation, for at gøre installationen mest muligt reproducerbar. Derfor skal man installere nogen support moduler manuelt :-(
 
 Se: <https://sense-emu.readthedocs.io/en/v1.1/install.html#alternate-platforms>
 
@@ -44,7 +45,8 @@ I manualen står der at jeg skal bruge et gui-lib-modul `python3-gi`, så det pr
     Use 'sudo apt autoremove' to remove them.
     0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
 
-Ikke så godt...
+Ikke så godt... at den ikke installerer noget. Det giver samme, _negative_, resultat at køre `sense_emu_gui` igen.
+
 
 ### Løsning?
 
@@ -57,7 +59,36 @@ Jeg burde nok have udeladt python2 pakken (`python-sense-emu`):
 
     sudo apt install python3-sense-emu sense-emu-tools
 
+### Web udgave
 
-## første forsøg
+Der er også en browser udgave: <https://trinket.io/sense-hat>, men den kan ikke køre nær så smooth, med git osv.
 
-## automatisk til og fra
+## Første forsøg, med `demo.py`
+Start SenseHAT Emulator (fram menu...):  
+![](assets/SenseEmuStart.png)
+
+Start `demo.py` og træk i _Yaw_ for at kompas pixelsen flytte sig.  
+![](assets/kompasDemo.png)
+
+## Automatisk til og fra
+
+Det kan være fint at kunne sætte programmerne op at i bruge sense_emu i test, men den rigtige sense_hat i produktion.
+
+Derfor har jeg oprettet filen `.env` i projektets rod. Når `pipenv shell` køres, indlæses linierne i `.env` som ekstra environment variabler fra operativsystemet. 
+
+    $ pipenv shell
+    Loading .env environment variables...
+    Launching subshell in virtual environment...
+
+I `demo.py` har jeg tilføjet/ændret import delen, så der nu står følgende, linje 6-12:
+
+    import sys
+    from os import environ
+
+    if 'EMU' in environ and environ['EMU']:
+        from sense_emu import SenseHat
+    else:
+        from sense_hat import SenseHat
+
+På den måde importeres `sense_emu` når environment-variblen `EMU` er sat til `True`, mens `sense_hat` importeres hvis `EMU` mangler eller er sat til noget andet (f.eks. sat til `False`).
+
