@@ -1,8 +1,19 @@
 #!/usr/bin/python
 
+# https://github.com/astro-pi/python-sense-hat/blob/master/examples/compass.py
+
 ## Dokumentation af import
 import sys
-from sense_hat import SenseHat
+from os import environ
+
+if 'EMU' in environ and environ['EMU']:
+    from sense_emu import SenseHat
+else:
+    from sense_hat import SenseHat
+
+## Pipenv indlæser automatisk .env ved start med `pipenv shell` og `pinenv run`.
+## Dermed kan EMU defineres i .env og dermed bestemme om vi skal importere sense_emu eller sense_hat
+
 
 # To get good results with the magnetometer you must first calibrate it using
 # the program in RTIMULib/Linux/RTIMULibCal
@@ -38,6 +49,7 @@ while True:
     print("North: %s" % dir)
     dir_inverted = 360 - dir  # So LED appears to follow North
     led_index = int(led_degree_ratio * dir_inverted)
+    led_index = led_index % 28
     offset = led_loop[led_index]
 
     y = offset // 8  # row
