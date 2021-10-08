@@ -47,8 +47,8 @@ Overvejelser om faget.
 # min omsættelse til rimelige og lærerige mål
 
 * Lær at installere programmer og kode-biblioteker med Linux pakke-manager
-* Lær at lave et programe der afviklet i et linux miljø.
-  * Lær om det spidsfindigheder der hører til dette
+* Lær at lave et program der afviklet i et linux miljø.
+  * Lær om det specifikke ved programmering til Linux
     * she-bang linie `#!`
     * brug chmod til at gøre programmet eksekverbart
     * Håndter SIG TERM
@@ -60,9 +60,13 @@ Overvejelser om faget.
     * afhængigheds og bibliteks-manager (pip, npm, maven, etc)
     * installation af programmer man self laver
   * ~~Lær at laven en linux-pakke, f.eks. en Debian (`.deb`) pakke.~~
-  * Lær at sætte egne programmer op som service f.eks. `systemd unit`, så de starter når computeren starter. 
+  * Lær at deployere på linux
+    * at sætte egne programmer op som service f.eks. `systemd unit`, så de starter når computeren starter. 
+* Lær om at portere et program til linux
+  * fra en anden linux distrubition
+  * fra windows
 * Lær at håndtere autogenereret dokumentation, i samspil med egen dokumentation.
-* Lær at lave man sider, og lægge dem ind i systemet.
+  * Lær at lave man sider, og lægge dem ind i systemet.
 
 # Konkrete opgaver
 * Installer Ubuntu på din skole PC
@@ -105,3 +109,8 @@ Overvejelser om faget.
 * _Ekstra-krav:_ Yderligere skal der oprettes og køres et rest-api (egentlig kun get), som aflæser luftfugtighed og temperatur fra SenseHat'en
   * Øverst i html-dokumentationens "header" skal teperatur og luftfigtig vises, således at det altid er en måling som er maks 3 sekunder gammel.  
   
+  # Andre Konkrete Opgaver
+
+  * Portér et program 
+    * skrevet på Ubuntu med SenseEmu
+    * 

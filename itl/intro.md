@@ -13,6 +13,8 @@
   * Forbind til maskinen med ssh
     * Men hvad er min IP adresse?
       * ip scan
+        * `nmap -oG - -sV -p 22 192.168.0.0/24`
+          * eller `watch -n10 "nmap -oG - -sV -p 22 192.168.0.0/24"`
       * kik på router
     * tilføj ssh gadget (RemoteHost) til VS Code
   * SenseHat
