@@ -1,0 +1,3 @@
+# Raspberry PI, SenseHat og Python
+
+...

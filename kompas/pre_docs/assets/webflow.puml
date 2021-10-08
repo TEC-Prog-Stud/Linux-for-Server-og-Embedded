@@ -1,0 +1,15 @@
+@startuml
+
+collections doxygen_header
+control javascript_snip
+entity direction_service
+
+doxygen_header -> javascript_snip:onLoad
+activate javascript_snip
+
+
+javascript_snip --> direction_service:get
+activate direction_service
+
+
+@enduml
