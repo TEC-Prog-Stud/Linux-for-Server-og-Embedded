@@ -21,3 +21,19 @@
 Men, det skal man nok ikke. Det er bedre at vedligeholde SenseHatDemoer i en mappe med repoet clonet for sig selv...
 
      % git subtree push -P SenseHatDemoer git@github.com:TEC-Prog-Stud/SenseHatDemoer.git master
+
+## pi-hat-demo / clearhat
+
+Se <https://github.com/s0ren/pi-hat-demo/tree/clearhat>.
+Har lavet en lille ting med en clear kommando. Kan udvikles med service også.
+
+Links herunder er med git/ssh protokol. Kan muligvis udskiftes med `https://github.com/s0ren/pi-hat-demo.git`
+
+Add
+:   `$ git subtree add -P projekter/clearhat git@github.com:s0ren/pi-hat-demo.git clearhat`
+
+Pull
+:   `$ git subtree pull -P projekter/clearhat git@github.com:s0ren/pi-hat-demo.git clearhat`
+
+Push
+:   `$ git subtree push -P projekter/clearhat git@github.com:s0ren/pi-hat-demo.git clearhat`
